@@ -1,0 +1,35 @@
+{
+  "name": "exel-app",
+  "version": "1.0.0",
+  "description": "Webpack (exports/imports) Babel Scss Eslint 2 Modes   - Dev:       Dev Server, SourceMap, Eslint, not minified JS and CSS   - Prod       Minified code Git",
+  "main": "webpack.config.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development webpack-dev-server --open",
+    "build": "cross-env NODE_ENV=production webpack --mode production"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/eslint-parser": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.4",
+    "eslint": "^8.42.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-webpack-plugin": "^4.0.1",
+    "html-webpack-plugin": "^5.5.1",
+    "mini-css-extract-plugin": "^2.7.6",
+    "sass-embedded": "^1.62.0",
+    "sass-loader": "^13.2.2",
+    "webpack": "^5.83.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0"
+  },
+  "browserslist": [
+    "> 0.25%, not dead"
+  ]
+}
