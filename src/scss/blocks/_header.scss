@@ -1,0 +1,8 @@
+@use '../settings' as *;
+
+.exel__header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: pxToRem(8) pxToRem(4) 0;
+}
