@@ -4,5 +4,35 @@
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
   padding: pxToRem(8) pxToRem(4) 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .input {
+    margin: 0;
+    padding: pxToRem(2) pxToRem(8);
+    color: #000;
+    border: pxToRem(2) solid transparent;
+    border-radius: pxToRem(2);
+    height: pxToRem(20);
+    font-size: pxToRem(18);
+    line-height: pxToRem(22);
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      border: pxToRem(2) solid $border-hover-color;
+    }
+
+    &:focus {
+      border: pxToRem(2) solid #1a73e8;
+    }
+
+  }
+
+  .button {
+    @include button(red);
+  }
 }

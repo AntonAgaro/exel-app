@@ -1,0 +1,4 @@
+@use './functions' as f;
+
+$header-height: f.pxToRem(34);
+$border-hover-color: #c0c0c0;
