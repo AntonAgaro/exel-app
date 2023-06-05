@@ -1,0 +1,93 @@
+@use '../settings' as *;
+
+.dashboard {
+  &__header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $db-header-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    box-shadow: 0 2px 5px 2px rgba(60, 64, 67, 0.15);
+    z-index: 9999;
+  }
+
+  &__new {
+    margin-top: $db-header-height;
+    padding: pxToRem(24);
+    background: #dadce0;
+  }
+
+  &__create {
+    width: pxToRem(160);
+    height: pxToRem(160);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: pxToRem(4);
+    font-size: pxToRem(24);
+    color: $dark-color;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      color: green;
+      box-shadow: 0 0 0 2px green;
+    }
+  }
+
+  &__view {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  &__table {
+    padding: pxToRem(16);
+  }
+
+  &__list-header {
+    padding: 0 pxToRem(12);
+    margin-bottom: pxToRem(10);
+    display: flex;
+    justify-content: space-between;
+    color: $list-header-color;
+    font-weight: 500;
+    font-size: pxToRem(16);
+  }
+
+  &__list {
+    list-style-type: none;
+  }
+
+  &__record {
+    padding: pxToRem(12);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover {
+      background: #e6f4ea;
+      border-radius: pxToRem(24);
+    }
+
+    & + & {
+      margin-top: pxToRem(10);
+    }
+
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      font-size: pxToRem(14);
+      color: $list-header-color;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

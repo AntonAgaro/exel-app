@@ -1,0 +1,56 @@
+@use '../settings' as *;
+
+.exel__table {
+  padding-bottom: pxToRem(2);
+  position: absolute;
+  top: $header-height + $toolbar-height + $formula-height;
+  left: 0;
+  right: 0;
+  overflow-x: auto;
+
+  .row {
+    display: flex;
+    height: $row-height;
+  }
+
+  .row-info {
+    min-width: $info-cell-width;
+    height: 100%;
+    @include flex-center();
+    border: pxToRem(1) solid $border-color;
+    border-top: none;
+    background: $cell-bg;
+  }
+
+  .row-data {
+    display: flex;
+  }
+
+  .column {
+    height: 100%;
+    width: $cell-width;
+    @include flex-center();
+    background: $cell-bg;
+    border: pxToRem(1) solid $border-color;
+    border-top: 0;
+    border-left: 0;
+  }
+
+  .cell {
+    padding: pxToRem(4);
+    width: $cell-width;
+    height: 100%;
+    border: pxToRem(1) solid $cell-border-color;
+    border-top: 0;
+    border-left: 0;
+    color: #111;
+    white-space: nowrap;
+    outline: none;
+
+    &.selected {
+      z-index: 2;
+      border: none;
+      box-shadow: 0 0 0 2px $selected-cell-outline;
+    }
+  }
+}

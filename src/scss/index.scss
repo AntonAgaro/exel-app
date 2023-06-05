@@ -1,0 +1,27 @@
+@use './blocks/formula';
+@use './blocks/header';
+@use './blocks/toolbar';
+@use './blocks/table';
+@use './pages/dashboard';
+@use './settings' as *;
+
+@import '~normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: pxToRem(12);
+}
+
+.exel {
+  position: relative;
+  height: 100%;
+  max-width: 100%;
+  color: $main-color;
+}

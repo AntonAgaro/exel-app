@@ -16,5 +16,5 @@ module.exports = {
   rules: {
     'require-jsdoc': 'off',
   },
-  extends: ['eslint:recommended', 'google'],
+  extends: ['eslint:recommended', 'google', 'prettier'],
 };

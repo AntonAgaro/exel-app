@@ -1,0 +1,29 @@
+@use './functions' as f;
+
+@mixin button($color: green) {
+  display: inline-block;
+  height: f.pxToRem(24);
+  min-width: f.pxToRem(24);
+  padding: f.pxToRem(4);
+  color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+
+  & > span {
+    font-size: f.pxToRem(18);
+  }
+
+  &:active,
+  &.active {
+    color: $color;
+  }
+
+  &:hover {
+    background: #eee;
+  }
+}
+
+@mixin flex-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

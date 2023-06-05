@@ -2,6 +2,7 @@ Webpack (exports/imports)
 Babel
 Scss
 Eslint
+Prettier
 2 Webpack Modes
   - Dev:
       Dev Server, SourceMap, Eslint, not minified JS and CSS
