@@ -1,5 +1,18 @@
 @use '../settings' as *;
 
 .exel__toolbar {
+  padding: 0 pxToRem(4);
+  position: absolute;
+  top: $header-height;
+  height: $toolbar-height;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  border-top: pxToRem(1) solid $border-color;
+  border-bottom: pxToRem(1) solid $border-color;
 
+  .button {
+    @include button(green);
+  }
 }

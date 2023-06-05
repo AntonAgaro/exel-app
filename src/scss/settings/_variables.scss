@@ -1,4 +1,5 @@
 @use './functions' as f;
 
 $header-height: f.pxToRem(34);
-$border-hover-color: #c0c0c0;
+$toolbar-height: f.pxToRem(40);
+$border-color: #c0c0c0;

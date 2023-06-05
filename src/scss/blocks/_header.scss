@@ -23,7 +23,7 @@
     cursor: pointer;
 
     &:hover {
-      border: pxToRem(2) solid $border-hover-color;
+      border: pxToRem(2) solid $border-color;
     }
 
     &:focus {
