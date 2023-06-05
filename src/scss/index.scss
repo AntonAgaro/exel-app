@@ -2,6 +2,7 @@
 @use './blocks/header';
 @use './blocks/toolbar';
 @use './blocks/table';
+@use './pages/dashboard';
 @use './settings' as *;
 
 @import '~normalize.css';
