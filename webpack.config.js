@@ -1,5 +1,5 @@
 const path = require('path');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -8,10 +8,7 @@ const EsLintPlugin = require('eslint-webpack-plugin');
 const isProd = process.env.NODE_ENV === 'production';
 const isDev = !isProd;
 
-const filename = (ext) => isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`;
-
-console.log('IS PROD', isProd);
-console.log('IS DEV', isDev);
+const filename = ext => (isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`);
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
