@@ -1,3 +1,5 @@
+import { $ } from '@core/dom';
+
 export class Exel {
   constructor(selector, options) {
     this.$el = document.querySelector(selector);
@@ -6,19 +8,20 @@ export class Exel {
   }
 
   getRoot() {
-    const $root = document.createElement('div');
-    $root.className = this.rootClassName;
-    this.components.forEach(Component => {
-      const $componentWrapper = document.createElement('div');
-      $componentWrapper.className = Component.rootClassName;
+    const $root = $.create('div', this.rootClassName);
+    this.components = this.components.map(Component => {
+      const $componentWrapper = $.create('div', Component.rootClassName);
       const component = new Component($componentWrapper);
-      $componentWrapper.insertAdjacentHTML('afterbegin', component.toHTML());
+      $.html($componentWrapper, component.toHTML());
       $root.append($componentWrapper);
+      return component;
     });
+    console.log(this.components);
     return $root;
   }
 
   render() {
     this.$el.append(this.getRoot());
+    this.components.forEach(component => component.init());
   }
 }
