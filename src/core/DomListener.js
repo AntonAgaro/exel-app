@@ -1,3 +1,5 @@
+import { capitalizeFirstLetter } from '@core/functions';
+
 export class DomListener {
   constructor($root, listeners = []) {
     if (!$root) {
@@ -8,8 +10,20 @@ export class DomListener {
   }
 
   initDomListeners() {
-    console.log(this.listeners);
+    this.listeners.forEach(listener => {
+      const method = getMeethodName(capitalizeFirstLetter(listener));
+      console.log(method);
+      if (!this[method]) {
+        throw new Error(`Method ${method} doesn't implemented in ${this[name]} component`);
+      }
+      this.root.addEventListener(listener, this[method].bind(this));
+      console.log(listener, this.root);
+    });
   }
 
   removeDomListeners() {}
+}
+
+function getMeethodName(method) {
+  return 'on' + method;
 }

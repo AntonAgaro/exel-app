@@ -16,7 +16,6 @@ export class Exel {
       $root.append($componentWrapper);
       return component;
     });
-    console.log(this.components);
     return $root;
   }
 

@@ -15,6 +15,7 @@ export class Formula extends ExelComponent {
   }
 
   onInput(event) {
-    console.log('Formula: onInput', event);
+    console.log(this.root);
+    console.log('Formula: onInput', event.target.textContent);
   }
 }
