@@ -2,6 +2,12 @@ import { ExelComponent } from '@core/ExelComponent';
 
 export class Toolbar extends ExelComponent {
   static rootClassName = 'exel__toolbar';
+  constructor($root) {
+    super($root, {
+      name: 'Toolbar',
+      listeners: ['click'],
+    });
+  }
   toHTML() {
     return `
     <div class="button">
@@ -23,5 +29,9 @@ export class Toolbar extends ExelComponent {
             <span class="material-symbols-outlined"> format_underlined </span>
           </div>
     `;
+  }
+
+  onClick(event) {
+    console.log(event.target);
   }
 }

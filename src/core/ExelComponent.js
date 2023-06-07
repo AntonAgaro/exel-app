@@ -13,4 +13,8 @@ export class ExelComponent extends DomListener {
   init() {
     this.initDomListeners();
   }
+
+  destroy() {
+    this.removeDomListeners();
+  }
 }

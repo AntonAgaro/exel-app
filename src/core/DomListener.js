@@ -12,16 +12,19 @@ export class DomListener {
   initDomListeners() {
     this.listeners.forEach(listener => {
       const method = getMeethodName(capitalizeFirstLetter(listener));
-      console.log(method);
       if (!this[method]) {
-        throw new Error(`Method ${method} doesn't implemented in ${this[name]} component`);
+        throw new Error(`Method ${method} doesn't implemented in ${this['name']} component`);
       }
-      this.root.addEventListener(listener, this[method].bind(this));
-      console.log(listener, this.root);
+      this[method] = this[method].bind(this);
+      this.root.addEventListener(listener, this[method]);
     });
   }
 
-  removeDomListeners() {}
+  removeDomListeners() {
+    this.listeners.forEach(listener => {
+      this.root.removeEventListener(listener, this[getMeethodName(capitalizeFirstLetter(listener))]);
+    });
+  }
 }
 
 function getMeethodName(method) {
