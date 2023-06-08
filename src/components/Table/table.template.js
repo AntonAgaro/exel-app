@@ -13,13 +13,13 @@ const createCol = (content = '') => {
   return `
      <div class="column">
         ${content}
-        <div class="col-resize"></div>
+        <div class="col-resize" data-resize="col"></div>
      </div>
   `;
 };
 
 const createRow = (content = '', cellNumber = '') => {
-  const resize = cellNumber ? `<div class="row-resize"></div>` : '';
+  const resize = cellNumber ? `<div class="row-resize" data-resize="row"></div>` : '';
   return `
     <div class="row">
       <div class="row-info">

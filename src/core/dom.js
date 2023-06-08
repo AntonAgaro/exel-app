@@ -19,4 +19,11 @@ export const $ = {
     const $element = typeof el === 'string' ? this.findOne(el) : el;
     $element.insertAdjacentHTML('afterbegin', html);
   },
+
+  data(el, attr) {
+    if (!el || !attr) {
+      return;
+    }
+    return el.dataset[attr];
+  },
 };

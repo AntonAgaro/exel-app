@@ -1,5 +1,6 @@
 import { ExelComponent } from '@core/ExelComponent';
 import { createTable } from '@/components/Table/table.template';
+import { $ } from '@core/dom';
 
 export class Table extends ExelComponent {
   static rootClassName = 'exel__table';
@@ -14,7 +15,9 @@ export class Table extends ExelComponent {
   }
 
   onClick() {}
-  onMousedown() {}
+  onMousedown(event) {
+    console.log($.data(event.target, 'resize'));
+  }
   onMousemove() {}
   onMouseup() {}
 }
