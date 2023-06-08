@@ -11,14 +11,21 @@ const createCell = () => {
 
 const createCol = (content = '') => {
   return `
-     <div class="column">${content}</div>
+     <div class="column">
+        ${content}
+        <div class="col-resize"></div>
+     </div>
   `;
 };
 
 const createRow = (content = '', cellNumber = '') => {
+  const resize = cellNumber ? `<div class="row-resize"></div>` : '';
   return `
     <div class="row">
-      <div class="row-info">${cellNumber}</div>
+      <div class="row-info">
+        ${cellNumber}
+        ${resize}
+      </div>
       <div class="row-data">${content}</div>
     </div>
   `;
