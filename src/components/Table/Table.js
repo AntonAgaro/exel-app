@@ -17,17 +17,19 @@ export class Table extends ExelComponent {
 
   resizeCol(event, cords, parent, cells) {
     const delta = event.pageX - cords.right;
-    parent.style.width = cords.width + delta + 'px';
+    const widthValue = cords.width + delta + 'px';
+    $.css(parent, { width: widthValue });
     cells.forEach(el => {
-      el.style.width = cords.width + delta + 'px';
+      $.css(el, { width: widthValue });
     });
   }
 
   resizeRow(event, cords, parent, cells) {
     const delta = event.pageY - cords.bottom;
-    parent.style.height = cords.height + delta + 'px';
+    const heightValue = cords.height + delta + 'px';
+    $.css(parent, { height: heightValue });
     cells.forEach(el => {
-      el.style.height = cords.height + delta + 'px';
+      $.css(el, { height: heightValue });
     });
   }
 

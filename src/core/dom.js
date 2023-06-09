@@ -33,4 +33,20 @@ export const $ = {
   getCords(el) {
     return el.getBoundingClientRect();
   },
+
+  css(el, styles) {
+    if (!el || !styles) {
+      return false;
+    }
+    if (typeof styles === 'string') {
+      el.style.cssText += styles;
+      return true;
+    }
+    if (typeof styles === 'object') {
+      Object.keys(styles).forEach(style => {
+        el.style[style] = styles[style];
+      });
+      return true;
+    }
+  },
 };
