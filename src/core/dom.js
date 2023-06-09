@@ -1,9 +1,12 @@
 export const $ = {
-  findOne: tagname => {
-    if (!tagname) {
+  findOne: selector => {
+    if (!selector) {
       throw new Error('$.findOne expects string as argument');
     }
-    return document.querySelector(tagname);
+    return document.querySelector(selector);
+  },
+  findAll(selector, parent = document) {
+    return parent.querySelectorAll(selector);
   },
   create(tagname, classes = '') {
     const $el = document.createElement(tagname);
@@ -25,5 +28,9 @@ export const $ = {
       return;
     }
     return el.dataset[attr];
+  },
+
+  getCords(el) {
+    return el.getBoundingClientRect();
   },
 };

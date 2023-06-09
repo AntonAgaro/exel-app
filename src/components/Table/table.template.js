@@ -3,15 +3,15 @@ const LETTERS_CODES = {
   Z: 90,
 };
 
-const createCell = () => {
+const createCell = (column = '', row = '') => {
   return `
-     <div class="cell" contenteditable></div>
+     <div class="cell" contenteditable data-column="${column}" data-row="${row}"></div>
   `;
 };
 
 const createCol = (content = '') => {
   return `
-     <div class="column">
+     <div class="column" data-type="resizable" data-col-type="${content}">
         ${content}
         <div class="col-resize" data-resize="col"></div>
      </div>
@@ -21,7 +21,7 @@ const createCol = (content = '') => {
 const createRow = (content = '', cellNumber = '') => {
   const resize = cellNumber ? `<div class="row-resize" data-resize="row"></div>` : '';
   return `
-    <div class="row">
+    <div class="row" data-type="resizable" data-row-type="${cellNumber}">
       <div class="row-info">
         ${cellNumber}
         ${resize}
@@ -42,8 +42,8 @@ export const createTable = (rowsCount = 15) => {
 
   for (let i = 0; i < rowsCount; i++) {
     let cellHTML = '';
-    for (let i = LETTERS_CODES.A; i <= LETTERS_CODES.Z; i++) {
-      cellHTML += createCell();
+    for (let j = LETTERS_CODES.A; j <= LETTERS_CODES.Z; j++) {
+      cellHTML += createCell(String.fromCharCode(j), String(i + 1));
     }
     rows.push(createRow(cellHTML, String(i + 1)));
   }

@@ -30,6 +30,7 @@
   .column {
     position: relative;
     height: 100%;
+    min-width: pxToRem(32);
     width: $cell-width;
     @include flex-center();
     background: $cell-bg;
@@ -40,6 +41,7 @@
 
   .cell {
     padding: pxToRem(4);
+    min-width: pxToRem(32);
     width: $cell-width;
     height: 100%;
     border: pxToRem(1) solid $cell-border-color;
